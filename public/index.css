@@ -1,0 +1,68 @@
+.listTitle {
+	background: #fff;
+	border-left: solid 5px #60c;
+	border-top: solid 1px #888;
+	border-bottom: solid 1px #888;
+	border-right: solid 1px #888;
+}
+
+#videoListWrapper {
+	margin: 0 auto;
+}
+
+.videoList {
+	margin: 5px;
+	width: 250px;
+	float: left;
+}
+
+.videoItem {
+	margin: 3px;
+	padding: 5px;
+	background: #fff;
+	border: solid 1px #888;
+}
+
+.videoItemThumb {
+	margin-right: 10px;
+	float: left;
+	width: 64px;
+	height: 64px;
+}
+
+.videoItemInfo {
+	width: 155px;
+	float: left;
+}
+
+.videoItemTitle a {
+	color: #03C;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.videoItemTitle a:visited {
+	color: #03C;
+}
+
+.videoItemDescription {
+	
+}
+
+.videoItemPlayCount {
+	margin-top: 2px;
+	margin-right: 10px;
+	line-height: 24px;
+	padding-left: 28px;
+	float: left;
+	background: url(./play.png) 0px 0px no-repeat;
+}
+
+.videoItemLikeitCount {
+	margin-top: 2px;
+	margin-right: 10px;
+	line-height: 24px;
+	padding-left: 28px;
+	float: left;
+	background: url(./likeit.png) 0px 0px no-repeat;
+}

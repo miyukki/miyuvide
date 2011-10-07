@@ -1,0 +1,29 @@
+<%- partial('header') %>
+<script type="text/javascript">
+var vid = <%= videoInfo.id %>;
+var likeitdata = <%= JSON.stringify(videoInfo.likeit) %>;
+</script>
+
+<div id="videoInfo">
+	<h1 id="videoInfoTitle"><%= videoInfo.title %></h1>
+	<p id="videoInfoDescription"><%- videoInfo.description %></p>
+	<p id="videoInfoPlayerCount"><%= videoInfo.playcount %> 再生</p>
+	<p id="videoInfoLikeitCount"><%= videoInfo.likeitcount %> ｲｲﾈ!</p>
+	<div class="clear"></div>
+</div>
+
+<div id="videoStage">
+	<video id="videoDisplay" style="width: 640px; height: 480px;" src="<%= videoInfo.videopath %>" poster="<%= videoInfo.thumbpath %>" preload="auto" autoplay="autoplay"></video>
+</div>
+
+<div id="videoController">
+	<div id="seekBar"></div>
+	<button id="buttonPlay" class="controllerButton" value="Play">Play</button>
+	<button id="buttonStop" class="controllerButton" value="Stop">Stop</button>
+	<canvas id="timeSliderCanvas" width="690" height="100"></cancas>
+	<div class="clear"></div>
+</div>
+
+<iframe id="likeitframe" width="0" height="0"></iframe>
+
+<%- partial('footer') %>

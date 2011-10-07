@@ -1,0 +1,83 @@
+<%- partial('header') %>
+<p>「みゆびで！」は最新技術「みゆっきLikeit!」により、あなたにとって最適な動画を選択し、あなたに最高の笑顔をおとどけする、次世代動画共有サイトです。</p>
+
+<div id="videoListWrapper">
+	<div class="videoList">
+	<h2 class="listTitle">登録された順</h2>
+		<% cache.id_sorted.forEach(function(item){ %>
+		<div class="videoItem">
+			<div class="videoItemThumb">
+				<a href="watch/<%= item.id %>"><img src="<%= item.thumbpath %>" alt="<%= item.thumbpath %>" width="64" height="64" /></a>
+			</div>
+			<div class="videoItemInfo">
+				<h3 class="videoItemTitle"><a href="watch/<%= item.id %>"><%= item.title %></a></h3>
+				<p class="videoItemDescription">
+				<% if (item.description.length > 40) { %>
+					<%= item.description.substr(0, 40) %>...
+				<% }else{ %>
+					<%= item.description %>
+				<% } %>
+				</p>
+			</div>
+			<div class="clear"></div>
+			<p class="videoItemPlayCount"><%= item.playcount %> 再生</p>
+			<p class="videoItemLikeitCount"><%= item.likeitcount %> ｲｲﾈ!</p>
+			<div class="clear"></div>
+		</div>
+		<% }) %>
+	</div>
+
+	<div class="videoList">
+	<h2 class="listTitle">再生が多い順</h2>
+		<% cache.playcount_sorted.forEach(function(item){ %>
+		<div class="videoItem">
+			<div class="videoItemThumb">
+				<a href="watch/<%= item.id %>"><img src="<%= item.thumbpath %>" alt="<%= item.thumbpath %>" width="64" height="64" /></a>
+			</div>
+			<div class="videoItemInfo">
+				<h3 class="videoItemTitle"><a href="watch/<%= item.id %>"><%= item.title %></a></h3>
+				<p class="videoItemDescription">
+				<% if (item.description.length > 40) { %>
+					<%= item.description.substr(0, 40) %>...
+				<% }else{ %>
+					<%= item.description %>
+				<% } %>
+				</p>
+			</div>
+			<div class="clear"></div>
+			<p class="videoItemPlayCount"><%= item.playcount %> 再生</p>
+			<p class="videoItemLikeitCount"><%= item.likeitcount %> ｲｲﾈ!</p>
+			<div class="clear"></div>
+		</div>
+		<% }) %>
+	</div>
+
+	<div class="videoList">
+	<h2 class="listTitle">ｲｲﾈ!が多い順</h2>
+		<% cache.likeitcount_sorted.forEach(function(item){ %>
+		<div class="videoItem">
+			<div class="videoItemThumb">
+				<a href="watch/<%= item.id %>"><img src="<%= item.thumbpath %>" alt="<%= item.thumbpath %>" width="64" height="64" /></a>
+			</div>
+			<div class="videoItemInfo">
+				<h3 class="videoItemTitle"><a href="watch/<%= item.id %>"><%= item.title %></a></h3>
+				<p class="videoItemDescription">
+				<% if (item.description.length > 40) { %>
+					<%= item.description.substr(0, 40) %>...
+				<% }else{ %>
+					<%= item.description %>
+				<% } %>
+				</p>
+			</div>
+			<div class="clear"></div>
+			<p class="videoItemPlayCount"><%= item.playcount %> 再生</p>
+			<p class="videoItemLikeitCount"><%= item.likeitcount %> ｲｲﾈ!</p>
+			<div class="clear"></div>
+		</div>
+		<% }) %>
+	</div>
+	
+	<div class="clear"></div>
+</div>
+
+<%- partial('footer') %>
